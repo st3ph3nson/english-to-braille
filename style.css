@@ -1,1 +1,32 @@
+:root { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+body { margin: 0; background: #0b0d10; color: #e9eef5; }
+.wrap { max-width: 900px; margin: 28px auto; padding: 0 16px; }
+h1 { margin: 0 0 6px; font-size: 26px; }
+.sub { margin: 0 0 18px; opacity: .8; }
+.card { background: #12161c; border: 1px solid #202632; border-radius: 14px; padding: 14px; margin: 14px 0; }
+label { display: block; margin: 0 0 8px; font-weight: 600; }
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  background: #0f1319;
+  color: #e9eef5;
+  border: 1px solid #273043;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 16px;
+  line-height: 1.4;
+  resize: vertical;
+}
+.row { display: flex; gap: 10px; margin-top: 10px; }
+button {
+  background: #1f6feb;
+  border: 0;
+  color: white;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+button:hover { filter: brightness(1.05); }
+.hint { margin-top: 10px; opacity: .75; font-size: 13px; }
 
