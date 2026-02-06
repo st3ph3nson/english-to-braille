@@ -99,7 +99,7 @@ const UEB = {
   },
 
 // Hadley shortforms (Unicode braille)
-UEB.shortforms = {
+  shortforms: {
   "about": "⠁⠃",
   "above": "⠁⠃⠧",
   "according": "⠁⠉",
@@ -175,7 +175,7 @@ UEB.shortforms = {
   "your": "⠽⠗",
   "yourself": "⠽⠗⠋",
   "yourselves": "⠽⠗⠧⠎"
-};
+},
 
   // Final-letter contractions (suffix-only)
   final56: {
