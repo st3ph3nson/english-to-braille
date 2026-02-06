@@ -76,7 +76,9 @@ function applyInitialLetterContraction(wordLower) {
 
 function applyWholeWordWordsigns(wordLower, tokens, i) {
   // strong whole-word contractions (and/for/of/the/with) only when standing alone
-  if (UEB.strongWords[wordLower] && standingAlone(tokens, i)) return UEB.strongWords[wordLower];
+  if (UEB.strongWordFromGroup?.[wordLower] && standingAlone(tokens, i)) {
+    return UEB.strongWordsFromGroup[wordLower];
+  }
 
   // initial-letter contractions are whole-word by nature (list-based)
   if (standingAlone(tokens, i)) {
