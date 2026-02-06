@@ -1,3 +1,4 @@
+// translator.js
 const $ = (id) => document.getElementById(id);
 
 function isLetter(ch) { return /^[A-Za-z]$/.test(ch); }
@@ -32,7 +33,7 @@ function tokenize(text) {
 }
 
 function standingAlone(tokens, i) {
-  // Simplified: token is "standing alone" if neighbors are punctuation or absent
+  // token is "standing alone" if neighbors are punctuation or absent
   const prev = tokens[i - 1];
   const next = tokens[i + 1];
   const prevOK = !prev || prev.type === "punct";
@@ -75,21 +76,25 @@ function applyInitialLetterContraction(wordLower) {
 function applyWholeWordWordsigns(wordLower, tokens, i) {
   if (!standingAlone(tokens, i)) return null;
 
-  // Strong whole-word wordsigns: and/for/of/the/with
+  // 0) Shortforms (Hadley list) — whole-word only
+  if (UEB.shortforms?.[wordLower]) {
+    return UEB.shortforms[wordLower];
+  }
+
+  // 1) Strong whole-word wordsigns: and/for/of/the/with
   if (UEB.strongWords?.[wordLower]) {
     return UEB.strongWords[wordLower];
   }
 
-  // Whole-word forms that share cells with groupsigns: child/shall/this/which/out/still
+  // 2) Whole-word forms that share cells with groupsigns: child/shall/this/which/out/still
   if (UEB.strongWordFromGroup?.[wordLower]) {
     return UEB.strongWordFromGroup[wordLower];
   }
 
-  // Initial-letter contractions (Hadley list)
+  // 3) Initial-letter contractions (Hadley list)
   const init = applyInitialLetterContraction(wordLower);
   if (init) return init;
 
-  // Shortforms hook (not implemented as braille spellings yet)
   return null;
 }
 
@@ -124,22 +129,20 @@ function translateWordInternal(wordLower) {
     let matched = false;
 
     for (const k of keys) {
-  if (!wordLower.startsWith(k, idx)) continue;
+      if (!wordLower.startsWith(k, idx)) continue;
 
-  // Special rule: "ea" groupsign (⠂) NOT allowed at start or end of a word.
-  if (k === "ea") {
-    const atStart = (idx === 0);
-    const atEnd = (idx + 2 === wordLower.length);
-    if (atStart || atEnd) {
-      continue; // don't use groupsign; fall through to letter-by-letter
+      // Special rule: "ea" groupsign (⠂) NOT allowed at start or end of a word.
+      if (k === "ea") {
+        const atStart = (idx === 0);
+        const atEnd = (idx + 2 === wordLower.length);
+        if (atStart || atEnd) continue;
+      }
+
+      out += groupMap[k];
+      idx += k.length;
+      matched = true;
+      break;
     }
-  }
-
-  out += groupMap[k];
-  idx += k.length;
-  matched = true;
-  break;
-}
 
     if (!matched) {
       const ch = wordLower[idx];
