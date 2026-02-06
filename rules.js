@@ -17,7 +17,6 @@ const UEB = {
   cap: "⠠",
 
   // Initial-letter contraction prefixes (Dot 5 / Dot 45 / Dot 456)
-  // Dot 5 sign is ⠐, dots 45 sign is ⠘, dots 456 sign is ⠸
   initPrefix: {
     dot5: "⠐",
     dot45: "⠘",
@@ -55,13 +54,13 @@ const UEB = {
 
   // Strong whole-word wordsigns that share cells with groupsigns (Hadley: ch/child, sh/shall, etc.)
   strongWordFromGroup: {
-    child: "⠡",  // ch/child
-    shall: "⠩",  // sh/shall
-    this:  "⠹",  // th/this
-    which: "⠱",  // wh/which
-    out:   "⠳",  // ou/out
-    still: "⠌",   // st/still
-    children: "⠡⠝"
+    child: "⠡",   // ch/child
+    shall: "⠩",   // sh/shall
+    this:  "⠹",   // th/this
+    which: "⠱",   // wh/which
+    out:   "⠳",   // ou/out
+    still: "⠌",   // st/still (same cell as "st" groupsign)
+    children: "⠡⠝" // child + "en" (Hadley shortform)
   },
 
   // Strong groupsigns (used inside words)
@@ -98,84 +97,84 @@ const UEB = {
     "gg":"⠆⠛"
   },
 
-// Hadley shortforms (Unicode braille)
+  // Hadley shortforms (Unicode braille) — WHOLE WORDS ONLY
   shortforms: {
-  "about": "⠁⠃",
-  "above": "⠁⠃⠧",
-  "according": "⠁⠉",
-  "across": "⠁⠉⠗",
-  "after": "⠁⠋",
-  "afternoon": "⠁⠋⠝",
-  "afterward": "⠁⠋⠺",
-  "again": "⠁⠛",
-  "against": "⠁⠛⠌",
-  "almost": "⠁⠇⠍",
-  "already": "⠁⠇⠗",
-  "also": "⠁⠇",
-  "although": "⠁⠇⠹",
-  "altogether": "⠁⠇⠞",
-  "always": "⠁⠇⠺",
-  "because": "⠆⠉",
-  "before": "⠆⠋",
-  "behind": "⠆⠓",
-  "below": "⠆⠇",
-  "beneath": "⠆⠝",
-  "beside": "⠆⠎",
-  "between": "⠆⠞",
-  "beyond": "⠆⠽",
-  "blind": "⠃⠇",
-  "braille": "⠃⠗⠇",
-  "children": "⠡⠝",
-  "conceive": "⠒⠉⠧",
-  "conceiving": "⠒⠉⠧⠛",
-  "could": "⠉⠙",
-  "deceive": "⠙⠉⠧",
-  "deceiving": "⠙⠉⠧⠛",
-  "declare": "⠙⠉⠇",
-  "declaring": "⠙⠉⠇⠛",
-  "either": "⠑⠊",
-  "first": "⠋⠌",
-  "friend": "⠋⠗",
-  "good": "⠛⠙",
-  "great": "⠛⠗⠞",
-  "herself": "⠓⠻⠋",
-  "him": "⠓⠍",
-  "himself": "⠓⠍⠋",
-  "immediate": "⠊⠍⠍",
-  "its": "⠭⠎",
-  "itself": "⠭⠋",
-  "letter": "⠇⠗",
-  "little": "⠇⠇",
-  "much": "⠍⠡",
-  "must": "⠍⠌",
-  "myself": "⠍⠽⠋",
-  "necessary": "⠝⠑⠉",
-  "neither": "⠝⠑⠊",
-  "oneself": "⠐⠕⠋",
-  "ourselves": "⠳⠗⠧⠎",
-  "paid": "⠏⠙",
-  "perceive": "⠏⠻⠉⠧",
-  "perceiving": "⠏⠻⠉⠧⠛",
-  "perhaps": "⠏⠻⠓",
-  "quick": "⠟⠅",
-  "receive": "⠗⠉⠧",
-  "receiving": "⠗⠉⠧⠛",
-  "rejoice": "⠗⠚⠉",
-  "rejoicing": "⠗⠚⠉⠛",
-  "said": "⠎⠙",
-  "should": "⠩⠙",
-  "such": "⠎⠡",
-  "themselves": "⠮⠍⠧⠎",
-  "thyself": "⠹⠽⠋",
-  "today": "⠞⠙",
-  "together": "⠞⠛⠗",
-  "tomorrow": "⠞⠍",
-  "tonight": "⠞⠝",
-  "would": "⠺⠙",
-  "your": "⠽⠗",
-  "yourself": "⠽⠗⠋",
-  "yourselves": "⠽⠗⠧⠎"
-},
+    "about": "⠁⠃",
+    "above": "⠁⠃⠧",
+    "according": "⠁⠉",
+    "across": "⠁⠉⠗",
+    "after": "⠁⠋",
+    "afternoon": "⠁⠋⠝",
+    "afterward": "⠁⠋⠺",
+    "again": "⠁⠛",
+    "against": "⠁⠛⠌",
+    "almost": "⠁⠇⠍",
+    "already": "⠁⠇⠗",
+    "also": "⠁⠇",
+    "although": "⠁⠇⠹",
+    "altogether": "⠁⠇⠞",
+    "always": "⠁⠇⠺",
+    "because": "⠆⠉",
+    "before": "⠆⠋",
+    "behind": "⠆⠓",
+    "below": "⠆⠇",
+    "beneath": "⠆⠝",
+    "beside": "⠆⠎",
+    "between": "⠆⠞",
+    "beyond": "⠆⠽",
+    "blind": "⠃⠇",
+    "braille": "⠃⠗⠇",
+    "children": "⠡⠝",
+    "conceive": "⠒⠉⠧",
+    "conceiving": "⠒⠉⠧⠛",
+    "could": "⠉⠙",
+    "deceive": "⠙⠉⠧",
+    "deceiving": "⠙⠉⠧⠛",
+    "declare": "⠙⠉⠇",
+    "declaring": "⠙⠉⠇⠛",
+    "either": "⠑⠊",
+    "first": "⠋⠌",
+    "friend": "⠋⠗",
+    "good": "⠛⠙",
+    "great": "⠛⠗⠞",
+    "herself": "⠓⠻⠋",
+    "him": "⠓⠍",
+    "himself": "⠓⠍⠋",
+    "immediate": "⠊⠍⠍",
+    "its": "⠭⠎",
+    "itself": "⠭⠋",
+    "letter": "⠇⠗",
+    "little": "⠇⠇",
+    "much": "⠍⠡",
+    "must": "⠍⠌",
+    "myself": "⠍⠽⠋",
+    "necessary": "⠝⠑⠉",
+    "neither": "⠝⠑⠊",
+    "oneself": "⠐⠕⠋",
+    "ourselves": "⠳⠗⠧⠎",
+    "paid": "⠏⠙",
+    "perceive": "⠏⠻⠉⠧",
+    "perceiving": "⠏⠻⠉⠧⠛",
+    "perhaps": "⠏⠻⠓",
+    "quick": "⠟⠅",
+    "receive": "⠗⠉⠧",
+    "receiving": "⠗⠉⠧⠛",
+    "rejoice": "⠗⠚⠉",
+    "rejoicing": "⠗⠚⠉⠛",
+    "said": "⠎⠙",
+    "should": "⠩⠙",
+    "such": "⠎⠡",
+    "themselves": "⠮⠍⠧⠎",
+    "thyself": "⠹⠽⠋",
+    "today": "⠞⠙",
+    "together": "⠞⠛⠗",
+    "tomorrow": "⠞⠍",
+    "tonight": "⠞⠝",
+    "would": "⠺⠙",
+    "your": "⠽⠗",
+    "yourself": "⠽⠗⠋",
+    "yourselves": "⠽⠗⠧⠎"
+  },
 
   // Final-letter contractions (suffix-only)
   final56: {
@@ -187,13 +186,15 @@ const UEB = {
     "ong":"⠰⠛",
     "tion":"⠰⠝"
   },
+
+  // Dot 46 final-letter contractions (no spaces between cells)
   final46: {
-  "ance": "⠨⠉",
-  "less": "⠨⠇",
-  "ound": "⠨⠙",
-  "ount": "⠨⠞",
-  "sion": "⠨⠝"
-},
+    "ance": "⠨⠉",
+    "less": "⠨⠇",
+    "ound": "⠨⠙",
+    "ount": "⠨⠞",
+    "sion": "⠨⠝"
+  },
 
   // Initial-letter contractions: whole words only (Hadley list)
   initDot5Words: [
@@ -203,8 +204,8 @@ const UEB = {
   initDot45Words: ["these","those","upon","whose","word"],
   initDot456Words: ["cannot","had","many","spirit","their","world"],
 
-  // Shortforms list exists on chart (hook only; not encoded as braille spellings yet)
-  shortforms: new Set([
+  // Optional: keep the word list around (NOT used directly by translator if you rely on shortforms map)
+  shortformsList: [
     "about","above","according","across","after","afternoon","afterward","again","against","almost","already",
     "also","although","altogether","always","because","before","behind","below","beneath","beside","between",
     "beyond","blind","braille","children","conceive","conceiving","could","deceive","deceiving","declare","declaring",
@@ -212,5 +213,8 @@ const UEB = {
     "much","must","myself","necessary","neither","oneself","ourselves","paid","perceive","perceiving","perhaps",
     "quick","receive","receiving","rejoice","rejoicing","said","should","such","themselves","thyself","today","together",
     "tomorrow","tonight","would","your","yourself","yourselves"
-  ])
+  ]
 };
+
+// Make sure translator.js can see it even if modules/caching get weird
+window.UEB = UEB;
