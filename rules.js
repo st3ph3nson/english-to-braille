@@ -32,9 +32,9 @@ const UEB = {
     "?": "⠦",
     "!": "⠖",
     "'": "⠄",
-    "\"": "⠶",      // quotation mark (paired behavior not handled here)
+    "\"": "⠶",
     "-": "⠤",
-    "—": "⠠⠤",     // em dash (simple)
+    "—": "⠠⠤",
     ":": "⠒",
     ";": "⠆",
     "(": "⠐⠣",
@@ -42,9 +42,9 @@ const UEB = {
     "/": "⠸⠌"
   },
 
-  // --- Contractions: as categories shown on the Hadley chart ---
+  // --- Contractions per Hadley chart categories ---
 
-  // Strong wordsigns / groupsigns
+  // Strong whole-word wordsigns
   strongWords: {
     and:"⠯",
     for:"⠿",
@@ -53,7 +53,7 @@ const UEB = {
     with:"⠾"
   },
 
-    // Strong whole-word wordsigns that share cells with groupsigns (per Hadley chart)
+  // Strong whole-word wordsigns that share cells with groupsigns (Hadley: ch/child, sh/shall, etc.)
   strongWordFromGroup: {
     child: "⠡",  // ch/child
     shall: "⠩",  // sh/shall
@@ -63,6 +63,7 @@ const UEB = {
     still: "⠌"   // st/still
   },
 
+  // Strong groupsigns (used inside words)
   strongGroups: {
     "ch":"⠡",
     "sh":"⠩",
@@ -96,10 +97,9 @@ const UEB = {
     "gg":"⠆⠛"
   },
 
-  // Final-letter contractions (Dot 56 / Dot 46 categories)
-  // NOTE: these are suffix-only rules.
+  // Final-letter contractions (suffix-only)
   final56: {
-    "ence":"⠢",   // often shared with "en" cell; UEB uses context (suffix position)
+    "ence":"⠢",
     "ful":"⠰⠋",
     "ity":"⠰⠽",
     "ment":"⠰⠞",
@@ -115,7 +115,7 @@ const UEB = {
     "sion":"⠰⠝"
   },
 
-  // Initial-letter contractions: whole words only (from your chart lists)
+  // Initial-letter contractions: whole words only (Hadley list)
   initDot5Words: [
     "character","day","ever","father","here","know","lord","mother","name","one","ought",
     "part","question","right","some","there","through","time","under","where","work","young"
@@ -123,8 +123,7 @@ const UEB = {
   initDot45Words: ["these","those","upon","whose","word"],
   initDot456Words: ["cannot","had","many","spirit","their","world"],
 
-  // Shortforms list exists on chart.
-  // Implementing shortforms perfectly requires their exact spellings; hook is provided.
+  // Shortforms list exists on chart (hook only; not encoded as braille spellings yet)
   shortforms: new Set([
     "about","above","according","across","after","afternoon","afterward","again","against","almost","already",
     "also","although","altogether","always","because","before","behind","below","beneath","beside","between",
@@ -135,4 +134,3 @@ const UEB = {
     "tomorrow","tonight","would","your","yourself","yourselves"
   ])
 };
-
