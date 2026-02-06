@@ -60,7 +60,7 @@ const UEB = {
     this:  "⠹",  // th/this
     which: "⠱",  // wh/which
     out:   "⠳",  // ou/out
-    still: "⠌"   // st/still
+    still: "⠌",   // st/still
     children: "⠡⠝"
   },
 
