@@ -124,13 +124,22 @@ function translateWordInternal(wordLower) {
     let matched = false;
 
     for (const k of keys) {
-      if (wordLower.startsWith(k, idx)) {
-        out += groupMap[k];
-        idx += k.length;
-        matched = true;
-        break;
-      }
+  if (!wordLower.startsWith(k, idx)) continue;
+
+  // Special rule: "ea" groupsign (⠂) NOT allowed at start or end of a word.
+  if (k === "ea") {
+    const atStart = (idx === 0);
+    const atEnd = (idx + 2 === wordLower.length);
+    if (atStart || atEnd) {
+      continue; // don't use groupsign; fall through to letter-by-letter
     }
+  }
+
+  out += groupMap[k];
+  idx += k.length;
+  matched = true;
+  break;
+}
 
     if (!matched) {
       const ch = wordLower[idx];
