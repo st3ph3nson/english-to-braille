@@ -52,6 +52,17 @@ const UEB = {
     the:"⠮",
     with:"⠾"
   },
+
+    // Strong whole-word wordsigns that share cells with groupsigns (per Hadley chart)
+  strongWordFromGroup: {
+    child: "⠡",  // ch/child
+    shall: "⠩",  // sh/shall
+    this:  "⠹",  // th/this
+    which: "⠱",  // wh/which
+    out:   "⠳",  // ou/out
+    still: "⠌"   // st/still
+  },
+
   strongGroups: {
     "ch":"⠡",
     "sh":"⠩",
