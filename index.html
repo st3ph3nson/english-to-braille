@@ -1,1 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>English → UEB Braille (Contracted)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <h1>English → UEB Braille</h1>
+    <p class="sub">Contracted baseline (applies contractions automatically when valid).</p>
+
+    <section class="card">
+      <label for="input">English</label>
+      <textarea id="input" rows="6" placeholder="Type English here..."></textarea>
+      <div class="row">
+        <button id="btn">Translate</button>
+        <button id="copy">Copy</button>
+      </div>
+      <div class="hint" id="hint"></div>
+    </section>
+
+    <section class="card">
+      <label for="output">Braille (Unicode)</label>
+      <textarea id="output" rows="6" readonly></textarea>
+    </section>
+  </main>
+
+  <script src="rules.js"></script>
+  <script src="translator.js"></script>
+</body>
+</html>
 
