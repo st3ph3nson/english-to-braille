@@ -61,6 +61,7 @@ const UEB = {
     which: "⠱",  // wh/which
     out:   "⠳",  // ou/out
     still: "⠌"   // st/still
+    children: "⠡⠝"
   },
 
   // Strong groupsigns (used inside words)
