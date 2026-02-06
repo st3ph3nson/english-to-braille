@@ -109,12 +109,12 @@ const UEB = {
     "tion":"⠰⠝"
   },
   final46: {
-    "ance":"⠅⠉",
-    "less":"⠅⠇",
-    "ound":"⠅⠙",
-    "ount":"⠅⠞",
-    "sion":"⠅⠝"
-  },
+  "ance": "⠨⠉",
+  "less": "⠨⠇",
+  "ound": "⠨⠙",
+  "ount": "⠨⠞",
+  "sion": "⠨⠝"
+},
 
   // Initial-letter contractions: whole words only (Hadley list)
   initDot5Words: [
